@@ -1,0 +1,293 @@
+/* Скрытые элементы */
+.invisible {
+    display: none;
+}
+
+/* Изображения */
+img {
+    width: 40%;
+}
+
+/* Общие стили для корзины */
+.cart-block {
+    position: absolute;
+    /* Позиционируем корзину относительно блока .cart */
+    top: 100%;
+    /* Размещаем корзину под кнопкой "Корзина" */
+    right: 0;
+    /* Сдвигаем корзину вправо */
+    width: 300px;
+    /* Ширина корзины */
+    height: auto;
+    /* Высота корзины автоматически подстраивается под содержимое */
+    background-color: #fff;
+    /* Белый фон для корзины */
+    border: 1px solid #ccc;
+    /* Граница для визуального разделения */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Тень для отделения от фона */
+    overflow-y: auto;
+    /* Прокрутка при переполнении */
+    padding: 20px;
+    /* Внутренние отступы */
+    box-sizing: border-box;
+    /* Включаем padding в общую ширину */
+    z-index: 100;
+    /* Устанавливаем z-index выше остальных элементов */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Плавный переход при открытии/закрытии */
+    transform: translateY(-10px);
+    /* Изначальная позиция корзины выше */
+    opacity: 0;
+    /* Начальная прозрачность */
+    visibility: hidden;
+    /* Начальная скрытость */
+}
+
+.cart-block.open {
+    opacity: 1;
+    /* Полная непрозрачность при открытии */
+    visibility: visible;
+    /* Сделать видимой */
+    transform: translateY(0);
+    /* Вернуть в обычное положение */
+}
+
+/* Стили для заголовка корзины */
+.cart-block h3 {
+    margin-top: 0;
+    /* Убираем верхний отступ у заголовка */
+    font-size: 24px;
+    /* Размер шрифта */
+}
+
+/* Стили для элементов корзины */
+.cart-item {
+    display: flex;
+    /* Используем флекс для размещения */
+    justify-content: space-between;
+    /* Разделяем элементы в блоке */
+    align-items: center;
+    /* Выровнено по центру */
+    margin: 10px 0;
+    /* Отступ между элементами */
+    padding: 10px;
+    /* Внутренние отступы */
+    border-bottom: 1px solid #eee;
+    /* Граница для разделения товаров */
+}
+
+.product-bio {
+    display: flex;
+    /* Размещение изображения и описания в строку */
+    align-items: center;
+}
+
+.product-bio img {
+    width: 60px;
+    /* Ширина изображения */
+    height: 60px;
+    /* Высота изображения */
+    margin-right: 50px;
+    /* Отступ между изображением и описанием */
+}
+
+.product-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-block {
+    display: flex;
+    flex-direction: column;
+    /* Вертикальное размещение в правом блоке */
+    align-items: flex-end;
+    /* Выровнено по правому краю */
+}
+
+.product-title {
+    font-weight: bold;
+    /* Сделать заголовок жирным */
+}
+
+.product-price,
+.product-quantity {
+    margin: 5px 0;
+    /* Отступ по вертикали */
+}
+
+.del-btn {
+    background-color: transparent;
+    /* Прозрачный фон кнопки */
+    border: none;
+    /* Убираем границу */
+    color: red;
+    /* Красный цвет текста */
+    cursor: pointer;
+    /* Указатель-рука при наведении */
+    font-size: 20px;
+    /* Размер кнопки удаления */
+}
+
+.del-btn:hover {
+    color: darkred;
+    /* Более темный оттенок при наведении */
+}
+
+/* Пустое состояние корзины */
+.empty-cart-message {
+    text-align: center;
+    /* Центрируем текст */
+    color: gray;
+    /* Серый цвет текста */
+    font-style: italic;
+    /* Курсив */
+}
+
+/* Стили для кнопки "Купить" и других элементов */
+.buy-btn {
+    background-color: #28a745;
+    /* Зеленый фон */
+    color: white;
+    /* Белый текст */
+    border: none;
+    /* Убираем границу */
+    padding: 10px 15px;
+    /* Внутренние отступы */
+    cursor: pointer;
+    /* Указатель-рука при наведении */
+    border-radius: 5px;
+    /* Закругленные углы */
+
+
+
+    transition: background-color 0.3s;
+    /* Плавный переход цвета */
+}
+
+.buy-btn:hover {
+    background-color: #218838;
+    /* Более темный зеленый при наведении */
+}
+
+/* Стили для шапки */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: black;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Необходимо для позиционирования корзины */
+}
+
+.search-form {
+    display: flex;
+    margin-right: 20px;
+}
+
+.search-field {
+    width: 155px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background-color: transparent;
+    transition: border-bottom-color 0.3s ease;
+    color: #fff;
+}
+
+.search-field:focus {
+    border-bottom-color: #007bff;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Добавляем полупрозрачный фон */
+    color: #fff;
+    /* Оставляем белый цвет текста */
+}
+
+.btn-search,
+.btn-cart {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn-search:hover,
+.btn-cart:hover {
+    color: #ccc;
+}
+
+.btn-cart {
+    position: relative;
+    /* Необходимо для позиционирования индикатора корзины */
+}
+
+/* Эффект для скрытых продуктов */
+.product-item {
+    transition: opacity 0.3s ease;
+}
+
+.product-item.invisible {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cart-item-image {
+
+    width: 30%;
+    margin-right: 15px;
+}
+
+.products {
+    display: flex;
+    /* Используем flexbox для расположения элементов в ряд */
+    flex-wrap: wrap;
+    /* Позволяет переносить элементы на следующую строку при нехватке места */
+    justify-content: space-between;
+    /* Распределяет пространство между элементами */
+}
+
+.product-item {
+    flex: 1 20%;
+    /* Устанавливаем гибкость для элементов. 30% означает, что каждая карточка будет занимать 30% ширины контейнера */
+    margin: 10px;
+    /* Отступы между карточками */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    /* Необязательно: добавление тени для карточек */
+    padding: 20px;
+    /* Отступ внутри карточек */
+    background-color: #fff;
+    /* Фоновый цвет карточек */
+}
+
+@media (max-width: 1000px) {
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-item {
+        flex: 1 0 95%;
+        margin: 10px 0;
+    }
+
+    .logo {
+        font-size: 1rem;
+        font-weight: bold;
+        color: rgb(119, 12, 12);
+    }
+}

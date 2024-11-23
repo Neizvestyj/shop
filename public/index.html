@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Tit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="css/style6.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="logo">Shop</div>
+      <div class="cart">
+
+        <search></search>
+        <cart ref="cart"></cart>
+      </div>
+    </header>
+    <main>
+      <products ref="products"></products>
+      <br>
+      <div>{{status}}</div>
+      <error :error1="error1"></error>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
+    <script src="js/ProductComponent.js" defer></script>
+    <script src="js/filter.js" defer></script>
+    <script src="js/CartComp.js" defer></script>
+    <script src="js/code.js" defer></script>
+    <script src="js/error.js" defer></script>
+
+    <!--<script src="components/error.js" defer></script>-->
+  </div>
+
+</body>
+
+</html>
